@@ -1,0 +1,38 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-notesnuxtapp-dev-93147-authRole",
+      "UnauthRoleArn": "arn:aws:iam::659430677818:role/amplify-notesnuxtapp-dev-93147-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::659430677818:role/amplify-notesnuxtapp-dev-93147-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-notesnuxtapp-dev-93147-deployment",
+      "UnauthRoleName": "amplify-notesnuxtapp-dev-93147-unauthRole",
+      "StackName": "amplify-notesnuxtapp-dev-93147",
+      "StackId": "arn:aws:cloudformation:eu-west-1:659430677818:stack/amplify-notesnuxtapp-dev-93147/f0705270-e47d-11eb-aa65-06a09a32ae67",
+      "AmplifyAppId": "d33xi1gmoonj0z"
+    },
+    "categories": {
+      "auth": {
+        "notesnuxtapp26db9e21": {
+          "userPoolId": "eu-west-1_BpfWTjV0M",
+          "userPoolName": "notes-user-pool",
+          "webClientId": "2s0gc4omnlbec3kojdomadi3ao",
+          "nativeClientId": "2s0gc4omnlbec3kojdomadi3ao",
+          "identityPoolId": "eu-west-1:2ae312b1-3e05-4046-a784-022a0c7b5630",
+          "identityPoolName": "notes_identity_pool",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::659430677818:role/Cognito_notes_identity_poolAuth_Role",
+          "authRoleName": "Cognito_notes_identity_poolAuth_Role",
+          "unauthRoleArn": "arn:aws:iam::659430677818:role/Cognito_notes_identity_poolUnauth_Role",
+          "unauthRoleName": "Cognito_notes_identity_poolUnauth_Role"
+        }
+      },
+      "storage": {
+        "notesnuxtappea62c7ab": {
+          "bucketName": "sst-notes-api-bucket-paultreanor",
+          "region": "eu-west-1"
+        }
+      }
+    }
+  }
+}

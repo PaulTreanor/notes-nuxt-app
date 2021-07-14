@@ -7,8 +7,8 @@
       
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="/signup">Link</b-nav-item>
-        <b-nav-item href="/login" disabled>Disabled</b-nav-item>
+        <b-nav-item href="/login">Login</b-nav-item>
+        <b-nav-item href="/signup">Sign up</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
 
