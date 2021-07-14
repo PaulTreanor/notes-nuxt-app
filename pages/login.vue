@@ -10,12 +10,15 @@
                 <b-form-input type="password" v-model="password" required></b-form-input>
             </b-form-group>
 
-            <b-button block variant="primary" :disabled="isFormInvalid">Log in</b-button>
+            <b-button block variant="primary" type="submit" :disabled="isFormInvalid">Log in</b-button>
         </b-form>
     </div>
 </template>
 
 <script>
+
+import { Auth } from "aws-amplify";
+
 export default {
     data() {
         return {
@@ -24,8 +27,14 @@ export default {
         }
     },
     methods : {
-        handleSubmit() {
-            console.log("Form submitted")
+        async handleSubmit(a) {
+            console.log("handling the submit    ")
+            try {
+                await Auth.signIn(this.email, this.password);
+                alert("Logged in");
+            } catch (e) {
+                alert(e.message);
+            }
         }
     },
     computed: {
