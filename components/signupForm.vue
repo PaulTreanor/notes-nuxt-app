@@ -1,5 +1,5 @@
 <template>
-    <div class="Login">
+    <div class="Signup">
         <b-form v-on:submit.prevent="handleSubmit">
 
             <b-form-group  id="email-input" label="Email" >
@@ -8,6 +8,10 @@
 
             <b-form-group id="password-input" label="Password">
                 <b-form-input type="password" v-model="password" required></b-form-input>
+            </b-form-group>
+
+            <b-form-group id="confirm-password-input" label="Conform password">
+                <b-form-input type="password" v-model="confirmPassword" required></b-form-input>
             </b-form-group>
 
             <b-button block variant="primary" type="submit" :disabled="isFormInvalid">Log in</b-button>
@@ -23,32 +27,17 @@ export default {
     data() {
         return {
             email: "",
-            password: ""
+            password: "",
+            confirmPassword: "",
         }
     },
     methods : {
         
 
         async handleSubmit(a) {
-            console.log("handling the submit    ")
-            try {
-                await Auth.signIn(this.email, this.password);
-                alert("Logged in");
-                
-                // set Vuex variable loggedIn as true
-                this.setLogIn();
-                this.$router.push('/')  
+            console.log("handling signup submit")
 
-                
-
-            } catch (e) {
-                alert(e.message);
-            }
-        }, 
-
-        setLogIn() {
-            console.log('setting login to true')
-            this.$store.commit('logIn')
+            // display confirmation component 
             
         },
 
@@ -57,10 +46,14 @@ export default {
     computed: {
         isFormInvalid() {
             // log in button disabled if form invalid
-            if (this.email.length > 0 && this.password.length > 0){
+            if (this.email.length > 0 && this.password.length > 0 && this.password != this.confirmPassword){
                 return false
             }
             return true
+        },
+
+        isConfirmationCodeValid() {
+            return this.confirmationCode.length > 0;
         }
     },
     
@@ -69,13 +62,14 @@ export default {
 
 <style scoped>
 @media all and (min-width: 480px) {
-  .Login {
+  .Signup {
     padding: 60px 0;
   }
 
-  .Login form {
+  .Signup form {
     margin: 0 auto;
     max-width: 320px;
   }
 }
 </style>
+
